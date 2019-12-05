@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button slot="start"  (click)="close()">
+      <ion-icon name="arrow-round-back" ></ion-icon>
+    </ion-button>
+    <ion-title>
+     Lista de Usuarios
+    </ion-title>
+    <ion-button slot="end" (click)="initializeItems()">
+        <ion-icon name="search"></ion-icon>
+        </ion-button>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-searchbar *ngIf="isItemAvailable" type="text" debounce="500" (ionInput)="getItems($event)"></ion-searchbar>
+    <ion-list>
+            <ion-item *ngFor="let ac of chta" (click)="openChat(ac)">
+                <ion-thumbnail slot="start">
+                    <img src={{ac.avatar}} >
+                </ion-thumbnail>
+                 <ion-text>{{ac.name}}  {{ac.lastname}}</ion-text>
+                      
+                        
+            </ion-item>
+   </ion-list>
+
+</ion-content>

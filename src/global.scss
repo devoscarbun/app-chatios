@@ -1,0 +1,49 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+ion-toolbar {
+   background: rgba(255,56,132,1);
+   background: -moz-linear-gradient(-45deg, rgba(255,56,132,1) 0%, rgba(144,32,103,1) 34%, rgba(20,6,70,1) 72%);
+   background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(255,56,132,1)), color-stop(34%, rgba(144,32,103,1)), color-stop(72%, rgba(20,6,70,1)));
+   background: -webkit-linear-gradient(-45deg, rgba(255,56,132,1) 0%, rgba(144,32,103,1) 34%, rgba(20,6,70,1) 72%);
+   background: -o-linear-gradient(-45deg, rgba(255,56,132,1) 0%, rgba(144,32,103,1) 34%, rgba(20,6,70,1) 72%);
+   background: -ms-linear-gradient(-45deg, rgba(255,56,132,1) 0%, rgba(144,32,103,1) 34%, rgba(20,6,70,1) 72%);
+   background: linear-gradient(135deg, rgba(255,56,132,1) 0%, rgba(144,32,103,1) 34%, rgba(20,6,70,1) 72%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3884', endColorstr='#140646', GradientType=1 );
+      color: white; 
+}
+ion-buttons{
+      color: white;
+}
+ion-avatar{
+      width: 50%;
+      height: 30%;
+      margin-top: 10%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  

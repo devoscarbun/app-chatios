@@ -1,0 +1,42 @@
+<!-- hola -->
+<ion-header>
+    <ion-toolbar class="main">
+
+        <ion-title>
+            Calculadora Financiera
+        </ion-title>
+
+        <div class="resultado"><span id="result">0</span></div>
+
+        <div class="operation"><span id="resulttwo">0</span></div>
+
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+
+
+    <div class="numeros">
+        <ion-button (click)="del()" color="light" class="letter-color">B</ion-button>
+        <ion-button (click)="sumar19()" color="light" class="letter-color">C</ion-button>
+        <ion-button (click)="add('%')" color="light">%</ion-button>
+        <ion-button (click)="add('+')" color="light">+</ion-button>
+        <ion-button (click)="add('7')" color="light">7</ion-button>
+        <ion-button (click)="add('8')" color="light">8</ion-button>
+        <ion-button (click)="add('9')" color="light">9</ion-button>
+        <ion-button (click)="add('/')" color="light">/</ion-button><br/>
+        <ion-button (click)="add('4')" color="light">4</ion-button>
+        <ion-button (click)="add('5')" color="light">5</ion-button>
+        <ion-button (click)="add('6')" color="light">6</ion-button>
+        <ion-button (click)="add('*')" color="light">*</ion-button><br/>
+        <ion-button (click)="add('1')" color="light">1</ion-button>
+        <ion-button (click)="add('2')" color="light">2</ion-button>
+        <ion-button (click)="add('3')" color="light">3</ion-button>
+        <ion-button (click)="add('-')" color="light">-</ion-button><br/>
+        <ion-button (click)="sumar15()" color="light">!</ion-button>
+        <ion-button (click)="add('0')" color="light">0</ion-button>
+        <ion-button (click)="add('.')" color="light">.</ion-button>
+        <ion-button (click)="calc()" color="light" class="letter-color">=</ion-button><br/>
+    </div>
+
+
+</ion-content>

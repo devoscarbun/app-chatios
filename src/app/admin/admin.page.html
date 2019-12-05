@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Admin
+    </ion-title> 
+    <ion-button slot="end" (click)="initializeItems()">
+        <ion-icon name="search"></ion-icon>
+      </ion-button>
+  </ion-toolbar>
+</ion-header>
+<ion-content *ngIf="ver">
+  <ion-item>
+    <ion-label>Eliminar Mensajes</ion-label>
+    <ion-select okText="Guardar" cancelText="Cerrar" [(ngModel)]="tiempo" (ionChange)="deleteTime()">
+      <ion-select-option  value=600>10 min</ion-select-option>
+      <ion-select-option  value=1800>30 min</ion-select-option>
+      <ion-select-option  value=3600>1 hrs</ion-select-option>
+      <ion-select-option  value=21600>6 hrs</ion-select-option>
+      <ion-select-option  value=43200>12 hrs</ion-select-option>
+      <ion-select-option  value=86400>24hrs </ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-searchbar *ngIf="isItemAvailable" type="text" debounce="500" (ionInput)="getItems($event)"></ion-searchbar>
+  <ion-list> 
+            <ion-item *ngFor="let ac of user" (click)="openRegister(ac)">
+                <ion-thumbnail slot="start">
+                    <img src={{ac.avatar}} >
+                </ion-thumbnail>
+
+                <ion-text>{{ac.name}} {{ac.lastname}}   {{ac.status}}</ion-text>
+            </ion-item>
+        </ion-list>
+  <ion-fab-button (click)="openRegisterNew()" title="Crear Usuario"><ion-icon name="add-circle"></ion-icon></ion-fab-button>
+</ion-content>
+<ion-content *ngIf="!ver">
+    <ion-card>
+      <div class="boxes">
+          <div class="box">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+          </div>
+          <div class="box">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+          </div>
+          <div class="box">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+          </div>
+          <div class="box">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+          </div>
+      </div></ion-card>
+     
+   </ion-content> 

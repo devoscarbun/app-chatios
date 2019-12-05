@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "521285437679",
+    "firebase_url": "https://chatsecreto-deda5.firebaseio.com",
+    "project_id": "chatsecreto-deda5",
+    "storage_bucket": "chatsecreto-deda5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:521285437679:android:3fa8fcd2718c5174",
+        "android_client_info": {
+          "package_name": "io.fcm.ionic.starter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "521285437679-r76bqp2cg4el72tj46gdtsfs5vlmvv6d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClYaq2fhjf-2PBo-rQFLT2fkKLrnPm9LI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "521285437679-r76bqp2cg4el72tj46gdtsfs5vlmvv6d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-button class="boton-salir" slot="start" (click)="close()">
+          <ion-icon class="icono-salir" name="arrow-dropleft"></ion-icon>
+      </ion-button>
+      <ion-title  *ngIf="chat">
+          {{chat.title}}
+      </ion-title>
+      <ion-title  *ngIf="!chat">
+        Nueva Nota
+    </ion-title>
+
+  </ion-toolbar>
+</ion-header>
+<ion-content  *ngIf="ver">
+
+
+  <ion-grid>
+      <ion-row class="chat1" id="venchat" (click)="modificateView()" >
+          <ion-card>
+              {{chat.content}}
+          </ion-card>
+      </ion-row>
+
+      <ion-row class="message" >
+              <ion-button (click)="delete(chat.id)" class="centrado">
+                <ion-icon name="trash"></ion-icon>
+              </ion-button>
+        
+      </ion-row>
+  </ion-grid>
+
+</ion-content>
+<ion-content *ngIf="!ver" >
+
+
+  <ion-grid>
+      <ion-row>
+          <ion-card>
+              <ion-label>Titulo:</ion-label>
+          <ion-input [(ngModel)]="title" >  </ion-input></ion-card>
+      </ion-row>
+      <ion-row class="chat1" id="venchat"  >
+          <ion-card>
+                <ion-label>Contenido:</ion-label>
+                <ion-textarea *ngIf="chat" [(ngModel)]="nota" (keyup.enter)="sentModificate()" (keyup.esc)="close()"></ion-textarea>
+              <ion-textarea *ngIf="!chat" [(ngModel)]="nota" (keyup.enter)="guardar()" (keyup.esc)="close()"></ion-textarea>
+          </ion-card>
+      </ion-row>
+
+  
+  </ion-grid>
+
+</ion-content>

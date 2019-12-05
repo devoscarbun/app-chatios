@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-button class="boton-salir" slot="start" (click)="close()">
+          <ion-icon class="icono-salir" name="arrow-dropleft"></ion-icon>
+      </ion-button>
+      <ion-title>
+          {{ chat.name_receiver}} y {{chat.name_sender}}    {{uploadPercent}}
+      </ion-title>
+
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+      <div id="venchat" #venchat [ngClass]="{chat1: !verChat, chat2: verChat }"   >
+   
+                  <ion-card *ngFor="let item of room.messages;let indice=index"  [ngClass]="{enviado : item.sender == idEmisor, recibido: item.sender != idEmisor }"
+                    >
+                      <ion-card-content >
+                          <div *ngIf="item.sender != idEmisor" id={{indice}} tabindex="0">
+                              <ion-button *ngIf="item.readed == false" (click)="delete(item);verR[item.id] = item.id"  >Leer Mensaje</ion-button>
+                            <div *ngIf="item.readed == true" >
+                          
+                             <ion-text *ngIf="item.type == 'text'">{{desencript(item.content)}}</ion-text> <br/>
+                             <ion-img *ngIf="item.type == 'img'" [src]="desencript(item.content)"></ion-img>
+                              <ion-note slot="start"> {{convert(item.date.seconds)}}</ion-note>
+                            </div>
+
+                          </div>
+                          <div *ngIf="item.sender == idEmisor" id={{indice}} tabindex="0">
+                                <ion-text *ngIf="item.type == 'text'">{{desencript(item.content)}}</ion-text> 
+                                <ion-img *ngIf="item.type == 'img'" [src]="desencript(item.content)"></ion-img>
+                                <br/>
+                              <ion-note slot="start" class="notas" > {{convert(item.date.seconds)}}</ion-note>
+                          </div>
+                         
+
+                      </ion-card-content>
+
+                  </ion-card>
+      </div>
+
+</ion-content>
+<ion-footer>
+   <ion-grid> 
+    <ion-row [ngClass]="{message : !verChat, message2:verChat}">
+        <ion-col size="10">
+
+            
+            <textarea *ngIf="tipomsg == 'text'" [(ngModel)]="msg" (click)="moverseA();verChat = !verChat" id="myInput" (keyup.esc)="verChat = false"></textarea>
+                <label *ngIf="tipomsg == 'img'">Cargando....................</label>
+
+
+        </ion-col>
+        <ion-col size="2" >
+            <ion-button  fill="clear" *ngIf="msg != ''"  (click)="sendMessage()">
+                <ion-icon name="arrow-dropright-circle" class="boton-enviar"></ion-icon>
+            </ion-button>
+    
+            <ion-button *ngIf="msg == ''" fill="clear"  (click)="addImg()">
+                    <ion-icon name="camera" class="boton-enviar"></ion-icon>
+                
+            </ion-button>
+        </ion-col>
+    </ion-row>
+</ion-grid>
+
+  </ion-footer>
+  

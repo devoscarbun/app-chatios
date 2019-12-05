@@ -1,0 +1,122 @@
+
+<ion-header >
+  <ion-toolbar  >
+    <ion-buttons slot="start" color="ligth">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title > 
+      Perfil
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="ver">
+  <ion-card>
+    <ion-card-header>
+    
+        <ion-img src={{avatar}} style="size: 100%" (click)="addImg()"></ion-img>
+     
+      </ion-card-header>  
+      <ion-card-content>
+          <ion-item>
+              <ion-label>
+                  Estatus
+              </ion-label >
+              <ion-input readonly [(ngModel)]="status" (click)="verteclado = false"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label>
+                  Cuenta
+              </ion-label>
+              <ion-input [(ngModel)]="acount" readonly (click)="verteclado = true"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label>
+                  Nombre
+              </ion-label>
+              <ion-input [(ngModel)]="name" (click)="verteclado = false"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label>
+                  Apellido
+              </ion-label>
+              <ion-input [(ngModel)]="lastname" (click)="verteclado = false"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label>
+                  Correo
+              </ion-label>
+              <ion-input [(ngModel)]="email" (click)="verteclado = false"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label>
+                  Telefono
+              </ion-label>
+             <ion-input [(ngModel)]="phone" (click)="verteclado = false"></ion-input>
+          </ion-item>
+          
+          <ion-button class="actualizar" (click)="actualizar();verteclado = false">Actualizar</ion-button>
+      </ion-card-content>
+  </ion-card>  
+
+</ion-content>
+<ion-content *ngIf="!ver" >
+    <ion-card class="carga">
+      <div class="boxes">
+          <div class="box">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+          </div>
+          <div class="box">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+          </div>
+          <div class="box">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+          </div>
+          <div class="box">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+          </div>
+      </div></ion-card>
+     
+   </ion-content> 
+   <ion-footer *ngIf="verteclado">
+    <div class="numeros">
+     
+        <ion-button class="col" (click)="add('7')" color="light">7</ion-button>
+        <ion-button class="col" (click)="add('8')" color="light">8</ion-button>
+        <ion-button class="col" (click)="add('9')" color="light">9</ion-button>
+        <ion-button class="col" (click)="del()" color="light" class="letter-color">B</ion-button>
+        <ion-button class="col" (click)="sumar19()" color="light" class="letter-color">C</ion-button>
+        <ion-button class="col" (click)="add('%')" color="light">%</ion-button>
+        
+        <br/>
+     
+        <ion-button class="col" (click)="add('4')" color="light">4</ion-button>
+        <ion-button class="col" (click)="add('5')" color="light">5</ion-button>
+        <ion-button class="col" (click)="add('6')" color="light">6</ion-button>
+        <ion-button class="col" (click)="add('/')" color="light">/</ion-button>
+        <ion-button class="col" (click)="add('+')" color="light">+</ion-button>
+        <ion-button class="col" (click)="add('*')" color="light">*</ion-button><br/>
+
+        <ion-button class="col" (click)="add('1')" color="light">1</ion-button>
+        <ion-button class="col" (click)="add('2')" color="light">2</ion-button>
+        <ion-button class="col" (click)="add('3')" color="light">3</ion-button>
+       <!-- <ion-button (click)="sumar15()" color="light">!</ion-button>-->
+        <ion-button class="col" (click)="add('0')" color="light">0</ion-button>
+        <ion-button class="col" (click)="add('.')" color="light">.</ion-button>
+        <ion-button class="col" (click)="add('-')" color="light">-</ion-button>
+        <br/>
+       <!--<ion-button (click)="calc()" color="light" class="letter-color">=</ion-button>--><br/>
+    </div>
+   </ion-footer>

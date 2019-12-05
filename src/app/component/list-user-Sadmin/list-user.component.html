@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button slot="start"  (click)="close()">
+      <ion-icon name="arrow-round-back" ></ion-icon>
+    </ion-button>
+    <ion-title>
+     Lista de Usuarios
+    </ion-title>
+    <ion-button slot="end" (click)="initializeItems()">
+        <ion-icon name="search"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-searchbar *ngIf="isItemAvailable" type="text" debounce="500" (ionInput)="getItems($event)"></ion-searchbar>
+        <ion-list>
+            <ion-item *ngFor="let ac of chta" >
+                <ion-thumbnail slot="start">
+                    <img src={{ac.avatar}} >
+                </ion-thumbnail>
+                 <ion-text>{{ac.name}}  {{ac.lastname}}</ion-text>
+                 <ion-thumbnail slot="end" *ngIf="ac.userId != room.userId">
+                <ion-button color=success *ngIf="shared(ac.userId) == -1" ><ion-icon name="checkmark-circle"></ion-icon></ion-button>
+                <ion-button color=medium *ngIf="shared(ac.userId) != -1" (click)="add(ac)"><ion-icon name="checkmark-circle"></ion-icon></ion-button>   
+                <ion-button  *ngIf="shared(ac.userId) == -1" (click)="remove(ac)"><ion-icon name="close-circle"></ion-icon></ion-button>  
+                <ion-button *ngIf="shared(ac.userId) != -1" ><ion-icon name="close-circle"></ion-icon></ion-button>    
+                </ion-thumbnail>         
+            </ion-item>
+      </ion-list>
+
+</ion-content>
