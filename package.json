@@ -44,7 +44,7 @@
     "cordova-plugin-native-keyboard": "2.0.3",
     "core-js": "^2.5.4",
     "firebase": "^6.4.2",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "phonegap-plugin-local-notification": "1.0.1",
     "rxjs": "~6.5.1",
     "tslib": "^1.9.0",
